@@ -37,15 +37,20 @@ categories[category][taskName].completed=true;
         }
 }
 }
-markComplete('home',0);
-console.log(categories)
+
 
 
 //remove task
-
-const removeTask = ()=>{
-    
+const removeTask = (category,taskName)=>{
+    if(taskName>=0 && taskName<categories[category].length&& categories[category][taskName].completed===true){
+categories[category].splice(taskName,1);
+return categories;
+    }
 }
+markComplete('home',0);
+//console.log(categories);
+const result=removeTask('home',0);
+console.log(result);
 
 
 
